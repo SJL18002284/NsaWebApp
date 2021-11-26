@@ -1,0 +1,82 @@
+﻿@model NsaWebApp.Models.DonationRequestModel
+
+@{
+    ViewBag.Title = "Detail";
+}
+
+<h2>Detail</h2>
+
+<div>
+    <h4>DonationRequestModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.HiddenFor(model => model.requestID)
+        </dt>
+
+        <dd>
+            @Html.HiddenFor(model => model.requestID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.requestDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.requestDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.causeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.causeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.organizerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.organizerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.organizerEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.organizerEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.organizerContactNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.organizerContactNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.requestDetails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.requestDetails)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.userID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.userID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.requestID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

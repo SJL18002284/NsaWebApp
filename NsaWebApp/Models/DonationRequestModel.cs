@@ -21,8 +21,8 @@ namespace NsaWebApp.Models
         public string organizerName { get; set; }
 
         [Required(ErrorMessage = "Organizer Email cannot be empty")]
-        [RegularExpression(@"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z",
-                            ErrorMessage = "Please enter a valid email address")]
+        //[RegularExpression(@"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z",
+        //                    ErrorMessage = "Please enter a valid email address")]
         public string organizerEmail { get; set; }
 
         [Required(ErrorMessage = "Organizer ContactNo cannot be empty")]

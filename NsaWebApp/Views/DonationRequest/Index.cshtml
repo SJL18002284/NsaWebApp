@@ -1,0 +1,70 @@
+﻿@model IEnumerable<NsaWebApp.Models.DonationRequestModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.requestDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.causeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.organizerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.organizerEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.organizerContactNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.requestDetails)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.userID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.requestDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.causeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.organizerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.organizerEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.organizerContactNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.requestDetails)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.userID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.requestID }) |
+            @Html.ActionLink("Details", "Detail", new { id = item.requestID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.requestID })
+        </td>
+    </tr>
+}
+
+</table>
