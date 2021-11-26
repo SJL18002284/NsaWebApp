@@ -8,13 +8,14 @@ namespace NsaWebApp.Models
 {
     public class DonationModel
     {
+        [Key]
         public string donationID { get; set; }
 
         [Required(ErrorMessage = "Name cannot be empty")]
         public string doneeName { get; set; }
 
         [Required(ErrorMessage = "Email cannot be empty")]
-        [RegularExpression(@"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z",
+        [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$",
                             ErrorMessage = "Please enter a valid email address")]
         public string doneeEmail { get; set; }
 
@@ -26,5 +27,9 @@ namespace NsaWebApp.Models
 
         [Required(ErrorMessage = "Request Date cannot be empty")]
         public string donationDate { get; set; }
+
+        public string userID { get; set; }
+
+        public string requestID { get; set; }
     }
 }

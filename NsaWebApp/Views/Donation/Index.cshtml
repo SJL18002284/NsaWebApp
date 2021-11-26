@@ -1,0 +1,57 @@
+﻿@model IEnumerable<NsaWebApp.Models.DonationModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.doneeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.doneeEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.doneeNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.donationDetails)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.donationDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.doneeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.doneeEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.doneeNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.donationDetails)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.donationDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.donationID }) |
+            @Html.ActionLink("Details", "Detail", new { id=item.donationID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.donationID }, new { @class = "ui-btn"})
+        </td>
+    </tr>
+}
+
+</table>

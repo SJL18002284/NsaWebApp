@@ -9,6 +9,7 @@ namespace NsaWebApp.Models
     public class DonationRequestModel
     {
         //variables of the request
+        [Key]
         public string requestID { get; set; }
 
         [Required(ErrorMessage = "Request Date cannot be empty")]
@@ -21,8 +22,8 @@ namespace NsaWebApp.Models
         public string organizerName { get; set; }
 
         [Required(ErrorMessage = "Organizer Email cannot be empty")]
-        //[RegularExpression(@"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z",
-        //                    ErrorMessage = "Please enter a valid email address")]
+        [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$",
+                            ErrorMessage = "Please enter a valid email address")]
         public string organizerEmail { get; set; }
 
         [Required(ErrorMessage = "Organizer ContactNo cannot be empty")]
