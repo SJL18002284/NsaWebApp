@@ -1,6 +1,11 @@
 ﻿using Firebase.Auth;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
+using FireSharp.Config;
+using FireSharp.Interfaces;
+using FireSharp.Response;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using NsaWebApp.Models;
 using System;
 using System.Collections.Generic;
@@ -21,7 +26,15 @@ namespace NsaWebApp.Controllers
         /// </summary>
         /// <returns></returns>
         private static string apiKey = "AIzaSyDL-UIoPKUEs3JfXH1yViIuTjDeqh006k4";
-        //private static string Bucket = "nsaauth.appspot.com";
+        private static string Bucket = "nsaauth.appspot.com";
+
+        IFirebaseConfig config = new FireSharp.Config.FirebaseConfig
+        {
+            AuthSecret = "POVN51CMexBrDIGd7S0dYkPQjZINwkbt5M7NoW9r",
+            BasePath = "https://nsaauth-default-rtdb.firebaseio.com/"
+        };
+
+        IFirebaseClient client;
 
         // GET: Account
         public ActionResult signUp()
@@ -35,10 +48,12 @@ namespace NsaWebApp.Controllers
         {
             try
             {
-                var auth = new FirebaseAuthProvider(new FirebaseConfig(apiKey));
+                var auth = new FirebaseAuthProvider(new Firebase.Auth.FirebaseConfig(apiKey));
 
                 var a = await auth.CreateUserWithEmailAndPasswordAsync(model.userEmail, model.userPassword, model.fullName, true);
                 ModelState.AddModelError(string.Empty, "Please Verify Your Email To Login");
+
+                addUserToFirebase(model);
             }
             catch (Exception ex)
             {
@@ -48,45 +63,34 @@ namespace NsaWebApp.Controllers
             return View();
         }
 
-        [AllowAnonymous]
-        [HttpGet]
-        public ActionResult Login(string returnUrl)
+        
+        public ActionResult Login()
         {
-            try
-            {
-                //verification
-                if (this.Request.IsAuthenticated)
-                {
-
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.Write(ex);
-            }
             return View();
         }
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<ActionResult> Login(LoginModel model, string returnUrl)
+        public async Task<ActionResult> Login(LoginModel model)
         {
             try
             {
                 //verification of the user
                 if (ModelState.IsValid)
                 {
-                    var auth = new FirebaseAuthProvider(new FirebaseConfig(apiKey));
+                    var auth = new FirebaseAuthProvider(new Firebase.Auth.FirebaseConfig(apiKey));
                     var result = await auth.SignInWithEmailAndPasswordAsync(model.userEmail, model.userPassword);
 
                     string token = result.FirebaseToken;
-                    var user = result.User;
+                    string userID = result.User.LocalId;
 
                     if (token != "")
                     {
-                        this.SignInUser(user.Email, token, false);
+                        addLoginToFirebase(model);
+                        Session["UserID"] = userID.ToString();
+                        //this.SignInUser(user.Email, token, false);
                         //RedirectToAction("About", "Home");
-                        return this.RedirectToLocal(returnUrl);
+                        return RedirectToAction("Index","Home");
                     }
                     else
                     {
@@ -178,5 +182,28 @@ namespace NsaWebApp.Controllers
             return RedirectToAction("Login", "Account");
         }
 
+        //for the login auditing
+        private void addLoginToFirebase(LoginModel model)
+        {
+            client = new FireSharp.FirebaseClient(config);
+
+            var login = model;
+
+            PushResponse response = client.Push("LoginAudit/", login);
+            login.loginDateTime = DateTime.Now.ToString();
+            login.loginID = response.Result.name;
+            SetResponse setResponse = client.Set("LoginAudit/" + login.loginID, login);
+        }
+
+        private void addUserToFirebase(RegisterModel model)
+        {
+            client = new FireSharp.FirebaseClient(config);
+
+            var user = model;
+
+            PushResponse response = client.Push("User/", user);
+            user.userEmail = response.Result.name;
+            SetResponse setResponse = client.Set("User/" + user.userEmail, user);
+        }
     }
 }

@@ -20,5 +20,7 @@ namespace NsaWebApp.Models
         public string userPassword { get; set; }
 
         public string loginDateTime { get; set; }
+
+        public string loginID { get; set; }
     }
 }

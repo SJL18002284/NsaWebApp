@@ -6,19 +6,20 @@ using System.Web;
 
 namespace NsaWebApp.Models
 {
-    public class UserModel
+    public class VolunteerModel
     {
-        public string userID { get; set; }
+        [Key]
+        public string VolunteerID { get; set; }
 
-        [Required(ErrorMessage = "Email id is required")]
+        [Required(ErrorMessage = "Email cannot be empty")]
         [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$",
                             ErrorMessage = "Please enter a valid email address")]
         public string userEmail { get; set; }
 
-        public string userName { get; set; }
+        [Required(ErrorMessage = "Full Name cannot be empty")]
+        public string fullName { get; set; }
 
-        public string userPassword { get; set; }
-
-        public string userContactNo { get; set; }
+        [Required(ErrorMessage = "Contact Number cannot be empty")]
+        public string contactNo { get; set; }
     }
 }
