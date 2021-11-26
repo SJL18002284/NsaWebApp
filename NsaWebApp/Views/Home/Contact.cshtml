@@ -1,17 +1,136 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<div class="stricky-header stricked-menu main-menu">
+    <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+</div><!-- /.stricky-header -->
+<!--Page Header Start-->
+<section class="page-header">
+    <div class="page-header__bg" style="background-image: url(~/assets/images/backgrounds/page-header-bg-1-1.jpg);"></div>
+    <!-- /.page-header__bg -->
+    <div class="container">
+        <h2>Contact</h2>
+        <ul class="thm-breadcrumb list-unstyled">
+            <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+            <li class="color-thm-gray">/</li>
+            <li><span>Contact</span></li>
+        </ul>
+    </div>
+</section>
+<!--Page Header End-->
+<!--Contact page Start-->
+<section class="contact-page">
+    <div class="container">
+        <div class="section-title text-center">
+            <span class="section-title__tagline">Contact With Us</span>
+            <h2 class="section-title__title">We love to hear from our <br> happy customers</h2>
+        </div>
+        <div class="row">
+            <div class="col-xl-6 col-lg-6">
+                <div class="contact-page__left">
+                    <div class="contact-page__img">
+                        <img src="~/assets/images/resources/contact-page-img-1.jpg" alt="">
+                    </div>
+                    <p class="contact-page__text">There are many variations of passages of available but the majority have suffered alteration in some form, by injected humou or randomised words even slightly believable.</p>
+                    <div class="contact-page__contact-info">
+                        <ul class="contact-page__contact-list list-unstyled">
+                            <li>
+                                <div class="icon">
+                                    <span class="icon-chat"></span>
+                                </div>
+                                <div class="text">
+                                    <p>Call Anytime</p>
+                                    <a href="tel:92 666 888 0000">92 666 888 0000</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <span class="icon-message"></span>
+                                </div>
+                                <div class="text">
+                                    <p>Send Email</p>
+                                    <a href="mailto:needhelp@nsa.co.za">needhelp@nsa.co.za</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <span class="icon-address"></span>
+                                </div>
+                                <div class="text">
+                                    <p>Visit Office</p>
+                                    <h5>80 broklyn golden street</h5>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6">
+                <div class="contact-page__form">
+                    <form action="~/assets/inc/sendemail.php" class="contact-page__main-form contact-form-validated">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="contact-page__input-box">
+                                    <input type="text" placeholder="Your name" name="name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <div class="contact-page__input-box">
+                                    <input type="email" placeholder="Email address" name="email">
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="contact-page__input-box">
+                                    <input type="text" placeholder="Subject" name="subject">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="contact-page__input-box">
+                                    <input type="text" placeholder="Phone Number" name="phone">
+                                </div>
+                            </div>
+                            <div class="col-xl-12">
+                                <div class="contact-page__input-box">
+                                    <textarea name="message" placeholder="Write message"></textarea>
+                                </div>
+                                <button type="submit" class="thm-btn contact-page__btn"><i class="fas fa-arrow-circle-right"></i>Send a Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Contact page End-->
+<!--Contact Page Google Map Start-->
+<section class="contact-page-google-map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4562.753041141002!2d-118.80123790098536!3d34.152323469614075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80e82469c2162619%3A0xba03efb7998eef6d!2sCostco+Wholesale!5e0!3m2!1sbn!2sbd!4v1562518641290!5m2!1sbn!2sbd" class="contact-page-google-map__one" allowfullscreen></iframe>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
-
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+</section>
+<!--Contact Page Google Map End-->
+<!--Become Volunteer Start-->
+<section class="become-volunteer">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="become-volunteer__inner">
+                    <div class="become-volunteer__left">
+                        <h2>Join your hand with us for <br> a better life and future</h2>
+                        <div class="become-volunteer__big-text">
+                            <h2>Become a Volunteers</h2>
+                        </div>
+                    </div>
+                    <div class="become-volunteer__btn-box">
+                        <a href="#" class="become-volunteer__btn thm-btn"><i class="fas fa-arrow-circle-right"></i>Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Become Volunteer End-->

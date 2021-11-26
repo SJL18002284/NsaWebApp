@@ -321,8 +321,16 @@
     <Compile Include="StartUp.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\font-awesome.css" />
     <Content Include="assets\css\halpes-responsive.css" />
     <Content Include="assets\css\halpes.css" />
+    <Content Include="assets\css\jquery.highlight.css" />
+    <Content Include="assets\css\prism.css" />
+    <Content Include="assets\css\scrollbar.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="assets\images\backgrounds\counters-two-bg.jpg" />
     <Content Include="assets\images\backgrounds\footer-bg.jpg" />
     <Content Include="assets\images\backgrounds\help-them-bg.jpg" />
@@ -379,6 +387,10 @@
     <Content Include="assets\images\gallery\gallery-page-img-8.jpg" />
     <Content Include="assets\images\gallery\gallery-page-img-9.jpg" />
     <Content Include="assets\images\loader.png" />
+    <Content Include="assets\images\logo.png" />
+    <Content Include="assets\images\mail-settings.jpg" />
+    <Content Include="assets\images\mailchim-settings.png" />
+    <Content Include="assets\images\map-settings.png" />
     <Content Include="assets\images\resources\about-page-img-1.jpg" />
     <Content Include="assets\images\resources\become-a-volunteer.jpg" />
     <Content Include="assets\images\resources\brand-1-1.png" />
@@ -462,7 +474,16 @@
     <Content Include="assets\images\testimonial\testimonial-2-img-2.png" />
     <Content Include="assets\images\testimonial\testimonial-2-img-3.png" />
     <Content Include="assets\inc\sendemail.php" />
+    <Content Include="assets\js\bootstrap.min.js" />
     <Content Include="assets\js\halpes.js" />
+    <Content Include="assets\js\jquery.highlight.js" />
+    <Content Include="assets\js\jquery.js" />
+    <Content Include="assets\js\jquery.nav.js" />
+    <Content Include="assets\js\jquery.scrollTo.js" />
+    <Content Include="assets\js\prism.js" />
+    <Content Include="assets\js\respond.js" />
+    <Content Include="assets\js\script.js" />
+    <Content Include="assets\js\scrollbar.js" />
     <Content Include="assets\vendors\animate\animate.min.css" />
     <Content Include="assets\vendors\bootstrap\css\bootstrap.min.css" />
     <Content Include="assets\vendors\bootstrap\js\bootstrap.bundle.min.js" />
@@ -555,6 +576,15 @@
     <Content Include="assets\vendors\jarallax\jarallax.min.js.map" />
     <Content Include="assets\vendors\reey-font\reey-regular-webfont.woff" />
     <Content Include="assets\vendors\reey-font\reey-regular-webfont.woff2" />
+    <Content Include="assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\fonts\FontAwesome.otf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -594,10 +624,13 @@
     <Content Include="Views\Donation\Detail.cshtml" />
     <Content Include="Views\Donation\Edit.cshtml" />
     <Content Include="Views\Donation\Delete.cshtml" />
+    <Content Include="Views\Volunteer\Create.cshtml" />
+    <Content Include="Views\Volunteer\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Volunteer\" />
+    <Folder Include="assets\images\background\" />
+    <Folder Include="assets\images\icons\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
