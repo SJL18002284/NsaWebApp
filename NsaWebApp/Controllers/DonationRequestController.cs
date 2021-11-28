@@ -56,38 +56,49 @@ namespace NsaWebApp.Controllers
             return View();
         }
 
+        
         [HttpGet]
         public ActionResult Create()
         {
-            return View();
+            if (Session["UserID"].ToString() != "")
+            {
+                return View();
+            }
+            else
+
+                return RedirectToAction("Login", "Account");
+            
+            
         }
 
         [HttpPost]
         public ActionResult Create(DonationRequestModel model)
         {
-            try
-            {
-                if (ModelState.IsValid)
+           
+                try
                 {
-                    addRequestToFirebase(model);
-                    ModelState.AddModelError(string.Empty, "Created Successfully");
-                    //return RedirectToAction("Create");
-                }
-                else
-                {
-                    ModelState.AddModelError(string.Empty, "Process unsuccessful");
-                    return RedirectToAction("Create");
+                    if (ModelState.IsValid)
+                    {
+                        addRequestToFirebase(model);
+                        ModelState.AddModelError(string.Empty, "Created Successfully");
+                        //return RedirectToAction("Create");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError(string.Empty, "Process unsuccessful");
+                        return RedirectToAction("Create");
+
+                    }
+
+                    //
 
                 }
-                
-                //
-                
-            }
-            catch (Exception ex)
-            {
-                ModelState.AddModelError(string.Empty, ex.Message);
-                
-            }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError(string.Empty, ex.Message);
+
+                }
+            
             ModelState.Clear();
             return View();
         }
@@ -134,6 +145,7 @@ namespace NsaWebApp.Controllers
 
             PushResponse response = client.Push("Requests/", request);
             request.requestID = response.Result.name;
+            request.userID = Session["UserID"].ToString();
             SetResponse setResponse = client.Set("Requests/" + request.requestID, request);
         }
     }

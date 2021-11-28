@@ -18,6 +18,9 @@ namespace NsaWebApp.Models
         [Required(ErrorMessage = "Cause Name cannot be empty")]
         public string causeName { get; set; }
 
+        [Required(ErrorMessage = "Request Category cannot be empty")]
+        public string requestCategory { get; set; }
+
         [Required(ErrorMessage = "Organizer Name cannot be empty")]
         public string organizerName { get; set; }
 

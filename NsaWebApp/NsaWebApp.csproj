@@ -391,6 +391,7 @@
     <Content Include="assets\images\mail-settings.jpg" />
     <Content Include="assets\images\mailchim-settings.png" />
     <Content Include="assets\images\map-settings.png" />
+    <Content Include="assets\images\nsa_logo.png" />
     <Content Include="assets\images\resources\about-page-img-1.jpg" />
     <Content Include="assets\images\resources\become-a-volunteer.jpg" />
     <Content Include="assets\images\resources\brand-1-1.png" />
@@ -420,7 +421,9 @@
     <Content Include="assets\images\resources\causes-two-img-2.jpg" />
     <Content Include="assets\images\resources\causes-two-img-3.jpg" />
     <Content Include="assets\images\resources\causes-two-img-4.jpg" />
+    <Content Include="assets\images\resources\classroom-volunteers-thumbnail.jpg" />
     <Content Include="assets\images\resources\contact-page-img-1.jpg" />
+    <Content Include="assets\images\resources\deepika.jpg" />
     <Content Include="assets\images\resources\event-details-img-1.jpg" />
     <Content Include="assets\images\resources\events-one-img-1.jpg" />
     <Content Include="assets\images\resources\events-one-img-2.jpg" />
@@ -445,10 +448,19 @@
     <Content Include="assets\images\resources\logo-2.png" />
     <Content Include="assets\images\resources\logo-3.png" />
     <Content Include="assets\images\resources\need-help-img-1.jpg" />
+    <Content Include="assets\images\resources\person.jpg" />
+    <Content Include="assets\images\resources\person2.jpg" />
+    <Content Include="assets\images\resources\person3.jpg" />
+    <Content Include="assets\images\resources\person4.jpg" />
+    <Content Include="assets\images\resources\person5.jpg" />
     <Content Include="assets\images\resources\recent-donation-img-1.jpg" />
     <Content Include="assets\images\resources\recent-donation-img-2.jpg" />
     <Content Include="assets\images\resources\recent-donation-img-3.jpg" />
     <Content Include="assets\images\resources\recent-donation-img-4.jpg" />
+    <Content Include="assets\images\resources\salman.jpg" />
+    <Content Include="assets\images\resources\smiles.jpg" />
+    <Content Include="assets\images\resources\srk.jpg" />
+    <Content Include="assets\images\resources\they_need_help.jpg" />
     <Content Include="assets\images\resources\three-boxes-img-1.jpg" />
     <Content Include="assets\images\resources\three-boxes-img-2.jpg" />
     <Content Include="assets\images\resources\three-boxes-img-3.jpg" />
@@ -459,6 +471,9 @@
     <Content Include="assets\images\shapes\main-slider-1-shape-1.png" />
     <Content Include="assets\images\shapes\main-slider-3-shape-1.png" />
     <Content Include="assets\images\shapes\qoute-1-1.png" />
+    <Content Include="assets\images\team\david.jpg" />
+    <Content Include="assets\images\team\janne.jpg" />
+    <Content Include="assets\images\team\sarah.jpg" />
     <Content Include="assets\images\team\team-one-img-1.jpg" />
     <Content Include="assets\images\team\team-one-img-2.jpg" />
     <Content Include="assets\images\team\team-one-img-3.jpg" />

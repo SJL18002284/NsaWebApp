@@ -18,6 +18,9 @@
             @Html.DisplayNameFor(model => model.causeName)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.requestCategory)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.organizerName)
         </th>
         <th>
@@ -36,36 +39,39 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        
-        <td>
-            @Html.DisplayFor(modelItem => item.requestDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.causeName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.organizerName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.organizerEmail)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.organizerContactNo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.requestDetails)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.userID)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.requestID }) |
-            @Html.ActionLink("Details", "Detail", new { id = item.requestID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.requestID }) |
-            @Html.ActionLink("Donate", "Create", "Donation", new { id = item.requestID }, null) |
-        </td>
-    </tr>
+<tr>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.requestDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.causeName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.requestCategory)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.organizerName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.organizerEmail)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.organizerContactNo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.requestDetails)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.userID)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.requestID }) |
+        @Html.ActionLink("Details", "Detail", new { id = item.requestID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.requestID }) |
+        @Html.ActionLink("Donate", "Create", "Donation", new { id = item.requestID }, null) |
+    </td>
+</tr>
 }
 
 </table>

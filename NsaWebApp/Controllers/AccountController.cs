@@ -26,7 +26,7 @@ namespace NsaWebApp.Controllers
         /// </summary>
         /// <returns></returns>
         private static string apiKey = "AIzaSyDL-UIoPKUEs3JfXH1yViIuTjDeqh006k4";
-        private static string Bucket = "nsaauth.appspot.com";
+       //private static string Bucket = "nsaauth.appspot.com";
 
         IFirebaseConfig config = new FireSharp.Config.FirebaseConfig
         {
@@ -86,8 +86,9 @@ namespace NsaWebApp.Controllers
 
                     if (token != "")
                     {
-                        addLoginToFirebase(model);
                         Session["UserID"] = userID.ToString();
+                        addLoginToFirebase(model);
+                        
                         //this.SignInUser(user.Email, token, false);
                         //RedirectToAction("About", "Home");
                         return RedirectToAction("Index","Home");
@@ -192,6 +193,7 @@ namespace NsaWebApp.Controllers
             PushResponse response = client.Push("LoginAudit/", login);
             login.loginDateTime = DateTime.Now.ToString();
             login.loginID = response.Result.name;
+            login.userID = Session["UserID"].ToString();
             SetResponse setResponse = client.Set("LoginAudit/" + login.loginID, login);
         }
 

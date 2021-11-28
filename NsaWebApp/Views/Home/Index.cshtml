@@ -1,31 +1,879 @@
-﻿@{
+﻿@model IEnumerable<NsaWebApp.Models.DonationRequestModel>
+@{
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+
+<section class="main-slider main-slider-three">
+    <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true,
+    "effect": "fade",
+     "pagination": {
+        "el": "#main-slider-pagination",
+        "type": "bullets",
+        "clickable": true
+      },
+    "navigation": {
+        "nextEl": "#main-slider__swiper-button-next",
+        "prevEl": "#main-slider__swiper-button-prev"
+    },
+    "autoplay": {
+        "delay": 5000
+    }}'>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="image-layer"
+                     style="background-image: url(~/assets/images/backgrounds/main-slider-3-1.jpg);">
+                </div>
+                <div class="image-layer-overlay"></div>
+                <!-- /.image-layer -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="main-slider__content">
+                                <p>Helping Them Today</p>
+                                <h2>Help the Poor <br> in Need</h2>
+                                <a href="#" class="thm-btn">
+                                    <i class="fas fa-arrow-circle-right"></i>Learn
+                                    More
+                                </a>
+                                <div class="main-slider-three-shape">
+                                    <img src="~/assets/images/shapes/main-slider-3-shape-1.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="image-layer"
+                     style="background-image: url(~/assets/images/backgrounds/main-slider-3-2.png);">
+                </div>
+                <div class="image-layer-overlay"></div>
+                <!-- /.image-layer -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="main-slider__content">
+                                <p>Helping Them Today</p>
+                                <h2>Help the Poor <br> in Need</h2>
+                                <a href="@Url.Action("About", "Home")" class="thm-btn">
+                                    <i class="fas fa-arrow-circle-right"></i>Learn
+                                    More
+                                </a>
+                                <div class="main-slider-three-shape">
+                                    <img src="~/assets/images/shapes/main-slider-3-shape-1.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- If we need navigation buttons -->
+        <div class="swiper-pagination" id="main-slider-pagination"></div>
+        <div class="main-slider__nav">
+            <div class="swiper-button-prev" id="main-slider__swiper-button-next">
+                <i class="icon-right-arrow icon-left-arrow"></i>
+            </div>
+            <div class="swiper-button-next" id="main-slider__swiper-button-prev">
+                <i class="icon-right-arrow"></i>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+</section>
+
+<!--Feature One Start-->
+<section class="feature-one">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4 col-lg-4">
+                <!--Feature One Single-->
+                <div class="feature-one__single feature-one__single-1">
+                    <div class="feature-one__icon">
+                        <span class="icon-heart"></span>
+                    </div>
+                    <div class="feature-one__content">
+                        <h3>Become a Volunteer</h3>
+                        <p>Gift your time and love.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4">
+                <!--Feature One Single-->
+                <div class="feature-one__single feature-one__single-2">
+                    <div class="feature-one__icon">
+                        <span class="icon-adoption"></span>
+                    </div>
+                    <div class="feature-one__content">
+                        <h3>Change a Life</h3>
+                        <p>Your smallest donation, can make the biggest impact.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4">
+                <!--Feature One Single-->
+                <div class="feature-one__single feature-one__single-3">
+                    <div class="feature-one__icon">
+                        <span class="icon-donation-1"></span>
+                    </div>
+                    <div class="feature-one__content">
+                        <h3>Donate Now</h3>
+                        <p>Make a difference, and give unto the less fortunate.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+</section>
+<!--Feature One End-->
+<!--Help Them Two Start-->
+<section class="help-them-two">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="help-them-two__left">
+                    <div class="help-them-two-bg"
+                         style="background-image: url(~/assets/images/resources/help-them-two-bg.jpg)"></div>
+                    <div class="help-them-two__img">
+                        <img src="~/assets/images/resources/smiles.jpg" alt="">
+                        <a href="https://www.youtube.com/watch?v=i9E_Blai8vk"
+                           class="help-them-two__video-btn video-popup"><i class="fa fa-play"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="help-them-two__right">
+                    <div class="section-title text-left">
+                        <span class="section-title__tagline">We Help Them</span>
+                        <h2 class="section-title__title">Trusted non profit <br> donation center</h2>
+                    </div>
+                    <div class="help-them-two__list-box">
+                        <ul class="help-them-two__list list-unstyled">
+                            <li>
+                                <div class="help-them-two__icon-box">
+                                    <i class="fas fa-arrow-circle-right"></i>
+                                </div>
+                                <div class="help-them-two__text-box">
+                                    <h4>Best fundraising platform</h4>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="help-them-two__icon-box">
+                                    <i class="fas fa-arrow-circle-right"></i>
+                                </div>
+                                <div class="help-them-two__text-box">
+                                    <h4>We help to educate children</h4>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="help-them-two__list help-them-two__list-two list-unstyled">
+                            <li>
+                                <div class="help-them-two__icon-box">
+                                    <i class="fas fa-arrow-circle-right"></i>
+                                </div>
+                                <div class="help-them-two__text-box">
+                                    <h4>We feed people</h4>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="help-them-two__icon-box">
+                                    <i class="fas fa-arrow-circle-right"></i>
+                                </div>
+                                <div class="help-them-two__text-box">
+                                    <h4>we serve the community</h4>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="help-them-two__bottom">
+                        <h3 class="help-them-two__bottom-title">NSA is the largest Community crowdfunding.</h3>
+                        <p class="help-them-two__bottom-text">
+                            We are for the people, by the people. We believe that one small iniative can have large ripple effects.
+                            Your one small act of kindness, can change countless lives. Come and let us change our world for the better.
+                        </p>
+                    </div>
+                    <div class="help-them-two__donation-text-box">
+                        <h2>Start&nbsp;&nbsp;Donating</h2>
+                        <div class="help-them-two__donation-icon">
+                            <img src="~/assets/images/resources/help-them-two__donation-icon.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+</section>
+<!--Help Them Two End-->
+<!--Causes Three Start-->
+
+<section class="causes-three">
+  
+        <div class="container">
+            <div class="causes-three__top">
+                <div class="causes-three__top-title">
+                    <div class="section-title text-left">
+                        <span class="section-title__tagline">Latest Causes</span>
+                        <h2 class="section-title__title">Find a cause<br> and donate to it</h2>
+                    </div>
+                </div>
+                <div class="causes-three__top-btn-box">
+                    <a href="@Url.Action("Index", "DonationRequest")" class="causes-three__top-btn thm-btn">
+                        <i class="fas fa-arrow-circle-right"></i>View
+                        More
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="causes-three__carousel owl-theme owl-carousel">
+                        <!--Causes Three Single-->
+                        @foreach (var item in Model)
+                        {
+                        <div class="causes-one__single">
+                            <div class="causes-one__img">
+                                <div class="causes-one__img-box">
+                                    <img src="~/assets/images/resources/welcome-one-heart-icon.png" alt="">
+                                    <a href="@Url.Action("Detail", "DonationRequest")">
+                                        <i class="fa fa-plus"></i>
+                                    </a>
+                                </div>
+                                <div class="causes-one__category">
+                                    <span>@item.requestCategory</span>
+                                </div>
+                            </div>
+                            <div class="causes-one__content">
+                                <h3 class="causes-one__title">
+                                    <a href="@Url.Action("Detail", "DonationRequest")">@*Raise Fund for Clean & Healthy Water*@ @item.causeName</a>
+                                </h3>
+                                <p class="causes-one__text">
+                                    @item.requestDetails
+                                </p>
+                            </div>
+                            <div class="causes-one__progress">
+                                <div class="bar">
+                                    <div class="bar-inner count-bar" data-percent="36%">
+                                        <div class="count-text">36%</div>
+                                    </div>
+                                </div>
+                                <div class="causes-one__goals">
+                                    <p><span>$25,270</span> Raised</p>
+                                    <p><span>$30,000</span> Goal</p>
+                                </div>
+                            </div>
+                        </div> 
+                        }
+                        <!--Causes Three Single-->
+                        <!--<div class="causes-one__single">
+                            <div class="causes-one__img">
+                                <div class="causes-one__img-box">
+                                    <img src="~/assets/images/resources/welcome-one-heart-icon.png" alt="">
+                                    <a href="causes-details.html">
+                                        <i class="fa fa-plus"></i>
+                                    </a>
+                                </div>
+                                <div class="causes-one__category">
+                                    <span>Medical</span>
+                                </div>
+                            </div>
+                            <div class="causes-one__content">
+                                <h3 class="causes-one__title">
+                                    <a href="@Url.Action("Detail", "DonationRequest")">Our donation is hope for poor childrens</a>
+                                </h3>
+                                <p class="causes-one__text">
+                                    There are not many of passages of lorem ipsum avail isn
+                                    alteration donationa in form simply free.
+                                </p>
+                            </div>
+                            <div class="causes-one__progress">
+                                <div class="bar">
+                                    <div class="bar-inner count-bar" data-percent="36%">
+                                        <div class="count-text">36%</div>
+                                    </div>
+                                </div>
+                                <div class="causes-one__goals">
+                                    <p><span>$25,270</span> Raised</p>
+                                    <p><span>$30,000</span> Goal</p>
+                                </div>
+                            </div>
+                        </div>-->
+                        <!--Causes Three Single-->
+                        <!--<div class="causes-one__single">
+                            <div class="causes-one__img">
+                                <div class="causes-one__img-box">
+                                    <img src="~/assets/images/resources/welcome-one-heart-icon.png" alt="">
+                                    <a href="@Url.Action("Detail", "DonationRequest")">
+                                        <i class="fa fa-plus"></i>
+                                    </a>
+                                </div>
+                                <div class="causes-one__category">
+                                    <span>Medical</span>
+                                </div>
+                            </div>
+                            <div class="causes-one__content">
+                                <h3 class="causes-one__title">
+                                    <a href="@Url.Action("Detail", "DonationRequest")">Education for Poor Children</a>
+                                </h3>
+                                <p class="causes-one__text">
+                                    There are not many of passages of lorem ipsum avail isn
+                                    alteration donationa in form simply free.
+                                </p>
+                            </div>
+                            <div class="causes-one__progress">
+                                <div class="bar">
+                                    <div class="bar-inner count-bar" data-percent="36%">
+                                        <div class="count-text">36%</div>
+                                    </div>
+                                </div>
+                                <div class="causes-one__goals">
+                                    <p><span>$25,270</span> Raised</p>
+                                    <p><span>$30,000</span> Goal</p>
+                                </div>
+                            </div>
+                        </div>-->
+                        <!--Causes Three Single-->
+                        <!--<div class="causes-one__single">
+                            <div class="causes-one__img">
+                                <div class="causes-one__img-box">
+                                    <img src="~/assets/images/resources/welcome-one-heart-icon.png" alt="">
+                                    <a href="@Url.Action("Detail", "DonationRequest")">
+                                        <i class="fa fa-plus"></i>
+                                    </a>
+                                </div>
+                                <div class="causes-one__category">
+                                    <span>Medical</span>
+                                </div>
+                            </div>
+                            <div class="causes-one__content">
+                                <h3 class="causes-one__title">
+                                    <a href="causes-details.html">Promoting The Rights of Children</a>
+                                </h3>
+                                <p class="causes-one__text">
+                                    There are not many of passages of lorem ipsum avail isn
+                                    alteration donationa in form simply free.
+                                </p>
+                            </div>
+                            <div class="causes-one__progress">
+                                <div class="bar">
+                                    <div class="bar-inner count-bar" data-percent="36%">
+                                        <div class="count-text">36%</div>
+                                    </div>
+                                </div>
+                                <div class="causes-one__goals">
+                                    <p><span>$25,270</span> Raised</p>
+                                    <p><span>$30,000</span> Goal</p>
+                                </div>
+                            </div>
+                        </div>-->
+                        <!--Causes Three Single-->
+                        <!--<div class="causes-one__single">
+                            <div class="causes-one__img">
+                                <div class="causes-one__img-box">
+                                    <img src="~/assets/images/resources/welcome-one-heart-icon.png" alt="">
+                                    <a href="@Url.Action("Detail", "DonationRequest")">
+                                        <i class="fa fa-plus"></i>
+                                    </a>
+                                </div>
+                                <div class="causes-one__category">
+                                    <span>Medical</span>
+                                </div>
+                            </div>
+                            <div class="causes-one__content">
+                                <h3 class="causes-one__title">
+                                    <a href="causes-details.html">Raise Fund for Clean & Healthy Water</a>
+                                </h3>
+                                <p class="causes-one__text">
+                                    There are not many of passages of lorem ipsum avail isn
+                                    alteration donationa in form simply free.
+                                </p>
+                            </div>
+                            <div class="causes-one__progress">
+                                <div class="bar">
+                                    <div class="bar-inner count-bar" data-percent="36%">
+                                        <div class="count-text">36%</div>
+                                    </div>
+                                </div>
+                                <div class="causes-one__goals">
+                                    <p><span>$25,270</span> Raised</p>
+                                    <p><span>$30,000</span> Goal</p>
+                                </div>
+                            </div>
+                        </div>-->
+                        <!--Causes Three Single-->
+                        <!--<div class="causes-one__single">
+                            <div class="causes-one__img">
+                                <div class="causes-one__img-box">
+                                    <img src="~/assets/images/resources/welcome-one-heart-icon.png" alt="">
+                                    <a href="@Url.Action("Detail", "DonationRequest")">
+                                        <i class="fa fa-plus"></i>
+                                    </a>
+                                </div>
+                                <div class="causes-one__category">
+                                    <span>Medical</span>
+                                </div>
+                            </div>
+                            <div class="causes-one__content">
+                                <h3 class="causes-one__title">
+                                    <a href="@Url.Action("Detail", "DonationRequest")">Our donation is hope for poor childrens</a>
+                                </h3>
+                                <p class="causes-one__text">
+                                    There are not many of passages of lorem ipsum avail isn
+                                    alteration donationa in form simply free.
+                                </p>
+                            </div>
+                            <div class="causes-one__progress">
+                                <div class="bar">
+                                    <div class="bar-inner count-bar" data-percent="36%">
+                                        <div class="count-text">36%</div>
+                                    </div>
+                                </div>
+                                <div class="causes-one__goals">
+                                    <p><span>$25,270</span> Raised</p>
+                                    <p><span>$30,000</span> Goal</p>
+                                </div>
+                            </div>
+                        </div>-->
+                        <!--Causes Three Single-->
+                        <!--<div class="causes-one__single">
+                            <div class="causes-one__img">
+                                <div class="causes-one__img-box">
+                                    <img src="~/assets/images/resources/welcome-one-heart-icon.png" alt="">
+                                    <a href="@Url.Action("Detail", "DonationRequest")">
+                                        <i class="fa fa-plus"></i>
+                                    </a>
+                                </div>
+                                <div class="causes-one__category">
+                                    <span>Medical</span>
+                                </div>
+                            </div>
+                            <div class="causes-one__content">
+                                <h3 class="causes-one__title">
+                                    <a href="@Url.Action("Detail", "DonationRequest")">Education for Poor Children</a>
+                                </h3>
+                                <p class="causes-one__text">
+                                    There are not many of passages of lorem ipsum avail isn
+                                    alteration donationa in form simply free.
+                                </p>
+                            </div>
+                            <div class="causes-one__progress">
+                                <div class="bar">
+                                    <div class="bar-inner count-bar" data-percent="36%">
+                                        <div class="count-text">36%</div>
+                                    </div>
+                                </div>
+                                <div class="causes-one__goals">
+                                    <p><span>$25,270</span> Raised</p>
+                                    <p><span>$30,000</span> Goal</p>
+                                </div>
+                            </div>
+                        </div>-->
+                        <!--Causes Three Single-->
+                        <!--<div class="causes-one__single">
+                            <div class="causes-one__img">
+                                <div class="causes-one__img-box">
+                                    <img src="~/assets/images/resources/welcome-one-heart-icon.png" alt="">
+                                    <a href="@Url.Action("Detail", "DonationRequest")">
+                                        <i class="fa fa-plus"></i>
+                                    </a>
+                                </div>
+                                <div class="causes-one__category">
+                                    <span>Medical</span>
+                                </div>
+                            </div>
+                            <div class="causes-one__content">
+                                <h3 class="causes-one__title">
+                                    <a href="@Url.Action("Detail", "DonationRequest")">Promoting The Rights of Children</a>
+                                </h3>
+                                <p class="causes-one__text">
+                                    There are not many of passages of lorem ipsum avail isn
+                                    alteration donationa in form simply free.
+                                </p>
+                            </div>
+                            <div class="causes-one__progress">
+                                <div class="bar">
+                                    <div class="bar-inner count-bar" data-percent="36%">
+                                        <div class="count-text">36%</div>
+                                    </div>
+                                </div>
+                                <div class="causes-one__goals">
+                                    <p><span>$25,270</span> Raised</p>
+                                    <p><span>$30,000</span> Goal</p>
+                                </div>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+<!--Causes Three End-->
+<!--Brand Three Start-->
+<section class="brand-one brand-three">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="brand-one__carousel owl-theme owl-carousel">
+                    <!--Brand One Single-->
+                    <div class="brand-one__single">
+                        <div class="brand-one__img">
+                            <img src="~/assets/images/resources/brand-1-1.png" alt="">
+                        </div>
+                    </div>
+                    <!--Brand One Single-->
+                    <div class="brand-one__single">
+                        <div class="brand-one__img">
+                            <img src="~/assets/images/resources/brand-1-2.png" alt="">
+                        </div>
+                    </div>
+                    <!--Brand One Single-->
+                    <div class="brand-one__single">
+                        <div class="brand-one__img">
+                            <img src="~/assets/images/resources/brand-1-3.png" alt="">
+                        </div>
+                    </div>
+                    <!--Brand One Single-->
+                    <div class="brand-one__single">
+                        <div class="brand-one__img">
+                            <img src="~/assets/images/resources/brand-1-4.png" alt="">
+                        </div>
+                    </div>
+                    <!--Brand One Single-->
+                    <div class="brand-one__single">
+                        <div class="brand-one__img">
+                            <img src="~/assets/images/resources/brand-1-5.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Brand Three End-->
+<!--Testimonial Two Start-->
+<section class="testimonial-two">
+    <div class="container">
+        <div class="section-title text-center">
+            <span class="section-title__tagline">Our Testimonials</span>
+            <h2 class="section-title__title">What they’re talking <br> about charity</h2>
+        </div>
+        <div class="row">
+            <div class="col-xl-4 col-lg-4 wow fadeInLeft" data-wow-duration="1500ms">
+                <!--Testimonial One Single-->
+                <div class="testimonial-one__single testimonial-two__single">
+                    <p class="testimonial-one__text">
+                        I never thought donating would be this easy. Absolutely effortless. So glad I could be a difference.
+                    </p>
+                    <div class="testimonial-one__client-info">
+                        <div class="testimonial-one__client-img">
+                            <img src="~/assets/images/resources/person.jpg" alt="">
+                            <div class="testimonial-one__quote">
+
+                            </div>
+                        </div>
+                        <div class="testimonial-one__client-name">
+                            <h3>Thabo Moloyi</h3>
+                            <p>Volunteer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
+                <!--Testimonial One Single-->
+                <div class="testimonial-one__single testimonial-two__single">
+                    <p class="testimonial-one__text">
+                        It is absoultely brilliant to know that there is still hope in this world. NSA you all are the beam of hope in this 
+                        dark world.
+                    </p>
+                    <div class="testimonial-one__client-info">
+                        <div class="testimonial-one__client-img">
+                            <img src="~/assets/images/resources/person3.jpg" alt="">
+                            <div class="testimonial-one__quote">
+
+                            </div>
+                        </div>
+                        <div class="testimonial-one__client-name">
+                            <h3>Jessica Brown</h3>
+                            <p>Donator</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="200ms">
+                <!--Testimonial One Single-->
+                <div class="testimonial-one__single testimonial-two__single">
+                    <p class="testimonial-one__text">
+                        Great ngo. So selfless, so loving so caring. Great to be a part of it. Never knew volunteering could bring one so much joy.
+                    </p>
+                    <div class="testimonial-one__client-info">
+                        <div class="testimonial-one__client-img">
+                            <img src="~/assets/images/resources/person5.jpg" alt="">
+                            <div class="testimonial-one__quote">
+
+                            </div>
+                        </div>
+                        <div class="testimonial-one__client-name">
+                            <h3>Mike Hardson</h3>
+                            <p>Volunteer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Testimonial Two End-->
+<!--Counters Two Start-->
+<section class="counters-two">
+    <div class="counters-two-bg jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
+         style="background-image: url(~/assets/images/backgrounds/counters-two-bg.jpg)"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5 col-lg-5">
+                <div class="counters-two__left">
+                    <div class="section-title text-left">
+                        <span class="section-title__tagline">Get Daily Updates</span>
+                        <h2 class="section-title__title">Check what make us different than others</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-7 col-lg-7">
+                <div class="counters-two__right">
+                    <ul class="counters-two__four-boxes list-unstyled">
+                        <li>
+                            <div class="counters-two__four-boxes-icon">
+                                <span class="icon-fast-food"></span>
+                            </div>
+                            <h4>Healthy <br> Food</h4>
+                        </li>
+                        <li>
+                            <div class="counters-two__four-boxes-icon">
+                                <span class="icon-water"></span>
+                            </div>
+                            <h4>Clean <br> Water</h4>
+                        </li>
+                        <li>
+                            <div class="counters-two__four-boxes-icon">
+                                <span class="icon-health-check"></span>
+                            </div>
+                            <h4>Medical <br> Treatment</h4>
+                        </li>
+                        <li>
+                            <div class="counters-two__four-boxes-icon">
+                                <span class="icon-cheque"></span>
+                            </div>
+                            <h4>Child <br> Education</h4>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Counters Two End-->
+<!--Need Help Start-->
+<section class="need-help">
+    <div class="container">
+        <div class="need-help__inner">
+            <div class="need-help__img">
+                <img src="~/assets/images/resources/they_need_help.jpg" alt="" width="500">
+            </div>
+            <div class="need-help__content">
+                <h4 class="need-help__title">They need your help</h4>
+                <p class="need-help__text">
+                    Be the change you want to see. No one deserves to be hungry. Your little help, goes a long way.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Need Help End-->
+<!--Team One Start-->
+<section class="team-one">
+    <div class="container">
+        <div class="section-title text-center">
+            <span class="section-title__tagline">Professional Volunteers</span>
+            <h2 class="section-title__title">Meet the wonderful team behind <br> our success story</h2>
+        </div>
+        <div class="row">
+            <div class="col-xl-4 col-lg-4">
+                <!--Team One Single-->
+                <div class="team-one__single">
+                    <div class="team-one__img-box">
+                        <div class="team-one__img">
+                            <img src="~/assets/images/team/janne.jpg" alt="">
+                        </div>
+                        <div class="team-one__member-name">
+                            <h2>Janne</h2>
+                        </div>
+                    </div>
+                    <div class="team-one__content">
+                        <h4 class="team-one__member-title">Volunteer</h4>
+                        <p class="team-one__text-box">
+                            I want to create a better tomorrow for our community.
+                        </p>
+                    </div>
+                    <div class="team-one__social">
+                        <a href="https://twitter.com/?lang=en"><i class="fab fa-twitter"></i></a>
+                        <a href="https://web.facebook.com/?_rdc=1&_rdr"><i class="fab fa-facebook-square"></i></a>
+                        <a href="https://dribbble.com/session/new"><i class="fab fa-dribbble"></i></a>
+                        <a href="https://www.instagram.com/accounts/login/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4">
+                <!--Team One Single-->
+                <div class="team-one__single">
+                    <div class="team-one__img-box">
+                        <div class="team-one__img">
+                            <img src="~/assets/images/team/david.jpg" alt="">
+                        </div>
+                        <div class="team-one__member-name">
+                            <h2>David</h2>
+                        </div>
+                    </div>
+                    <div class="team-one__content">
+                        <h4 class="team-one__member-title">Volunteer</h4>
+                        <p class="team-one__text-box">
+                            Alone it's impossible, but together nothing is impossible.
+                        </p>
+                    </div>
+                    <div class="team-one__social">
+                        <a href="https://twitter.com/?lang=en"><i class="fab fa-twitter"></i></a>
+                        <a href="https://web.facebook.com/?_rdc=1&_rdr"><i class="fab fa-facebook-square"></i></a>
+                        <a href="https://dribbble.com/session/new"><i class="fab fa-dribbble"></i></a>
+                        <a href="https://www.instagram.com/accounts/login/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4">
+                <!--Team One Single-->
+                <div class="team-one__single">
+                    <div class="team-one__img-box">
+                        <div class="team-one__img">
+                            <img src="~/assets/images/team/sarah.jpg" alt="">
+                        </div>
+                        <div class="team-one__member-name">
+                            <h2>Sarah</h2>
+                        </div>
+                    </div>
+                    <div class="team-one__content">
+                        <h4 class="team-one__member-title">Volunteer</h4>
+                        <p class="team-one__text-box">
+                            Giving is more satisfying than receiving.
+                        </p>
+                    </div>
+                    <div class="team-one__social">
+                        <a href="https://twitter.com/?lang=en"><i class="fab fa-twitter"></i></a>
+                        <a href="https://web.facebook.com/?_rdc=1&_rdr"><i class="fab fa-facebook-square"></i></a>
+                        <a href="https://dribbble.com/session/new"><i class="fab fa-dribbble"></i></a>
+                        <a href="https://www.instagram.com/accounts/login/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Team One End-->
+<!--Why Choose Start-->
+<section class="why-choose">
+    <div class="why-choose-bg" style="background-image: url(~/assets/images/backgrounds/why-choose-bg.jpg)"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8">
+                <div class="why-choose__left">
+                    <div class="section-title text-left">
+                        <span class="section-title__tagline">Get Daily Updates</span>
+                        <h2 class="section-title__title">Why you should choose our <br> charity foundation</h2>
+                    </div>
+                    <div class="why-choose__left-bottom">
+                        <div class="why-choose__left-text-box">
+                            <p class="why-choose__left-text">
+                                Your help will, enable us to reach more people.
+                            </p>
+                            <h2 class="why-choose__left-signature">Mike Hardson</h2>
+                        </div>
+                        <div class="why-choose__left-list-box">
+                            <ul class="why-choose__left-list list-unstyled">
+                                <li>
+                                    <div class="icon">
+                                        <i class="fas fa-arrow-circle-right"></i>
+                                    </div>
+                                    <div class="text">
+                                        <h5>We don't raise funds</h5>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fas fa-arrow-circle-right"></i>
+                                    </div>
+                                    <div class="text">
+                                        <h5>We are an established NGO</h5>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fas fa-arrow-circle-right"></i>
+                                    </div>
+                                    <div class="text">
+                                        <h5>We are for the people, by the people</h5>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fas fa-arrow-circle-right"></i>
+                                    </div>
+                                    <div class="text">
+                                        <h5>We are community based</h5>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fas fa-arrow-circle-right"></i>
+                                    </div>
+                                    <div class="text">
+                                        <h5>We are transparent</h5>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fas fa-arrow-circle-right"></i>
+                                    </div>
+                                    <div class="text">
+                                        <h5>We are making a differenc</h5>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @*<div class="col-xl-4">
+                <div class="why-choose__right">
+                    <div class="why-choose__urgent">
+                        <h3 class="why-choose__urgent-title">Raise Fund for Save Animals</h3>
+                        <p class="why-choose__urgent-text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit sed do eiusmod tempor incididunt.
+                        </p>
+                        <div class="why-choose__progress">
+                            <div class="bar">
+                                <div class="bar-inner count-bar" data-percent="36%">
+                                    <div class="count-text">36%</div>
+                                </div>
+                            </div>
+                            <div class="why-choose__goals">
+                                <p><span>$25,270</span> Raised</p>
+                                <p><span>$30,000</span> Goal</p>
+                            </div>
+                        </div>
+                        <a href="#" class="why-choose__right-btn"><i class="fa fa-heart"></i>Donate</a>
+                        <div class="why-choose__right-category">
+                            <span>Medical</span>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+        </div>
+    </div>
+</section>
+<!--Why Choose End-->

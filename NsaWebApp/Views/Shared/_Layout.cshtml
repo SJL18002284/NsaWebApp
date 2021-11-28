@@ -49,13 +49,13 @@
                 <nav class="main-menu main-menu-three clearfix">
                     <div class="main-menu-three__container clearfix">
                         <div class="main-menu-three__logo">
-                            <a href="index.html">
-                                <img src="~/assets/images/resources/logo-3.png" alt="">
+                            <a href="@Url.Action("Index", "Home")">
+                                <img src="~/assets/images/nsa_logo.png" alt="" width="60">
                             </a>
                         </div>
                         <div class="main-menu-three__inner-upper clearfix">
                             <div class="main-menu-three__btn">
-                                <a href="#" class="main-menu-three__donate-btn"><i class="fa fa-heart"></i>Donate </a>
+                                <a href="@Url.Action("Create", "DonationRequest")" class="main-menu-three__donate-btn"><i class="fa fa-heart"></i>Donate </a>
                             </div>
                             <div class="main-menu-three__inner clearfix">
                                 <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
@@ -64,18 +64,18 @@
                                         <a href="@Url.Action("Index", "Home")">Home</a>
                                         <ul>
                                             <li>
-                                                <a href="index.html">Home One</a>
+                                                <a href="@Url.Action("Index", "Home")">Home</a>
                                             </li>
-                                            <li><a href="index2.html">Home Two</a></li>
-                                            <li><a href="index3.html">Home Three</a></li>
+                                            @*<li><a href="index2.html">Home Two</a></li>
+                                                <li><a href="index3.html">Home Three</a></li>*@
                                             @*<li class="dropdown">
-                                                <a href="#">Header Styles</a>
-                                                <ul>
-                                                    <li><a href="index.html">Header One</a></li>
-                                                    <li><a href="index.html">Header Two</a></li>
-                                                    <li><a href="index.html">Header Three</a></li>
-                                                </ul>
-                                            </li>*@
+                                                    <a href="#">Header Styles</a>
+                                                    <ul>
+                                                        <li><a href="index.html">Header One</a></li>
+                                                        <li><a href="index.html">Header Two</a></li>
+                                                        <li><a href="index.html">Header Three</a></li>
+                                                    </ul>
+                                                </li>*@
                                         </ul>
                                     </li>
                                     <li class="dropdown">
@@ -88,26 +88,26 @@
                                         </ul>
                                     </li>
                                     @*<li class="dropdown">
-                                        <a href="#">Donations</a>
-                                        <ul>
-                                            <li><a href="causes.html">Causes</a></li>
-                                            <li><a href="causes-details.html">Causes Details</a></li>
-                                        </ul>
-                                    </li>*@
+                                            <a href="#">Donations</a>
+                                            <ul>
+                                                <li><a href="causes.html">Causes</a></li>
+                                                <li><a href="causes-details.html">Causes Details</a></li>
+                                            </ul>
+                                        </li>*@
                                     <li class="dropdown">
                                         <a href="#">Events</a>
                                         <ul>
                                             <li><a href="@Url.Action("Index", "DonationRequest")">Events</a></li>
-                                            <li><a href="@Url.Action("Detail", "DonationRequests")l">Event Details</a></li>
+                                            <li><a href="@Url.Action("Detail", "DonationRequest")l">Event Details</a></li>
                                         </ul>
                                     </li>
                                     @*<li class="dropdown">
-                                        <a href="#">News</a>
-                                        <ul>
-                                            <li><a href="news.html">News</a></li>
-                                            <li><a href="news-details.html">News Details</a></li>
-                                        </ul>
-                                    </li>*@
+                                            <a href="#">News</a>
+                                            <ul>
+                                                <li><a href="news.html">News</a></li>
+                                                <li><a href="news-details.html">News Details</a></li>
+                                            </ul>
+                                        </li>*@
                                     <li><a href="@Url.Action("Contact", "Home")">Contact</a></li>
                                 </ul>
                             </div>
@@ -230,8 +230,8 @@
                                 <div class="site-footer__bottom-logo-social">
                                     <div class="site-footer__bottom-logo">
                                         <a href="index.html">
-                                            <img src="~/assets/images/resources/footer-logo.jpg"
-                                                 alt="">
+                                            <img src="~/assets/images/nsa_logo.png"
+                                                 alt="" width="50">
                                         </a>
                                     </div>
                                     <div class="site-footer__bottom-social">
@@ -262,7 +262,7 @@
 
             <div class="logo-box">
                 <a href="@Url.Action("Index", "Home")" aria-label="logo image">
-                    <img src="~/assets/images/resources/logo-1.png" width="155"
+                    <img src="~/assets/images/nsa_logo.png" width="50"
                          alt="" />
                 </a>
             </div>
@@ -335,4 +335,5 @@
     <script src="~/assets/js/halpes.js"></script>
 
 </body>
+@RenderSection("scripts", required: false)
 </html>
